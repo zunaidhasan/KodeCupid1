@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0d1b22" />
+    <meta name="description" content="KodeCupid is a verified professional community for healthcare, education, university, and science professionals." />
+    <title>KodeCupid</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="./data/constants.js"></script>
+    <script src="./data/icebreakers.js"></script>
+    <script src="./data/profiles.js"></script>
+    <script src="./services/storage.js"></script>
+    <script src="./services/mockApi.js"></script>
+    <script src="./lib/format.js"></script>
+    <script src="./lib/schedule.js"></script>
+    <script src="./lib/matching.js"></script>
+    <script src="./app.js"></script>
+    <script>
+      if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+        window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch((error) => console.error('Service worker registration failed.', error)));
+      }
+    </script>
+  </body>
+</html>
